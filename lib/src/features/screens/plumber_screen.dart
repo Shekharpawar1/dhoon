@@ -18,8 +18,8 @@ class PlumberScreen extends StatefulWidget {
 }
 
 class _PlumberScreenState extends State<PlumberScreen> {
-  final servicedetailController=Get.put(ServiceDetailsController());
-   var service=Get.arguments;
+  final servicedetailController = Get.put(ServiceDetailsController());
+  var service = Get.arguments;
   @override
   void initState() {
     // TODO: implement initState
@@ -27,6 +27,7 @@ class _PlumberScreenState extends State<PlumberScreen> {
     print(service);
     servicedetailController.servicedetailApi(service);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +46,7 @@ class _PlumberScreenState extends State<PlumberScreen> {
         title: Text('Plumbers',
             style: GoogleFonts.roboto(
               textStyle: TextStyle(
-                  color:Colors.white,
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.w500),
             )),
@@ -55,6 +56,7 @@ class _PlumberScreenState extends State<PlumberScreen> {
       ),
     );
   }
+
   showAlertDailog() {
     return showDialog(
         context: context,
@@ -62,13 +64,12 @@ class _PlumberScreenState extends State<PlumberScreen> {
         builder: (BuildContext context) {
           return AlertDialog(
             shape: RoundedRectangleBorder(),
-            content:
-            Container(
+            content: Container(
               height: 230,
               width: 200,
               //width: MediaQuery.of(context).size.width,
-             // decoration: BoxDecoration(
-               //    color: Colors.white),
+              // decoration: BoxDecoration(
+              //    color: Colors.white),
               child: Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Column(
@@ -81,56 +82,61 @@ class _PlumberScreenState extends State<PlumberScreen> {
                         shape: BoxShape.circle,
                       ),
                       child: Image.asset(Images.delete),
-
-
                     ),
-                    SizedBox(height: 15,),
-                    Text("Off for sometime ?", style: GoogleFonts.poppins(
-                        color: Color(0xff4C4C4C),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 15),),
-                    SizedBox(height: 40,),
-                    Row(mainAxisAlignment: MainAxisAlignment.start,
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "Off for sometime ?",
+                      style: GoogleFonts.poppins(
+                          color: Color(0xff4C4C4C),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 15),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
                           height: 40,
                           width: 110,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),color: AppColors.PopButtonColor ),
+                              borderRadius: BorderRadius.circular(10),
+                              color: AppColors.PopButtonColor),
+                          child: Center(
+                              child: Text(
+                            "Yes",
+                            style: GoogleFonts.poppins(
+                                color: AppColors.ButtonTextColor,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 17),
 
-
-                          child: Center(child: Text("Yes",style: GoogleFonts.poppins(
-                              color: AppColors.ButtonTextColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 17),
-
-
-
-                         // TextStyle(color: Color(0xffFFFFFF)),
-                    )
-                          ),
-
+                            // TextStyle(color: Color(0xffFFFFFF)),
+                          )),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),color: AppColors.PopButtonColor, ),
-                          child: Center(child: Text("No",style:GoogleFonts.poppins(
-                              color: AppColors.ButtonTextColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15),
-
-                          //TextStyle(color: Color(0xffFFFFFF)),
-                          )
+                            borderRadius: BorderRadius.circular(10),
+                            color: AppColors.PopButtonColor,
                           ),
+                          child: Center(
+                              child: Text(
+                            "No",
+                            style: GoogleFonts.poppins(
+                                color: AppColors.ButtonTextColor,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15),
+
+                            //TextStyle(color: Color(0xffFFFFFF)),
+                          )),
                           height: 40,
                           width: 110,
-
-
                         ),
-
-
-
                       ],
                     )
                   ],
@@ -138,9 +144,6 @@ class _PlumberScreenState extends State<PlumberScreen> {
               ),
             ),
           );
-        }
-        );
+        });
   }
 }
-
-
