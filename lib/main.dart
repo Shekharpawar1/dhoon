@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'DHOONDLE APP',
-      initialRoute: '/landing',
+      initialRoute: '/profile',
       getPages: [
         GetPage(name: '/landing', page: () => SplashScreen()),
         GetPage(name: '/signup', page: () => Signup()),

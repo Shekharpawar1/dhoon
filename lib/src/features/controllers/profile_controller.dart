@@ -23,7 +23,7 @@ class ProfileController extends GetxController{
       isLoading(true);
       final prefs = await SharedPreferences.getInstance();
    var user_id=   await prefs.getString('user_id');
-      final response= await get(Uri.parse(Api.getprofile+"?user_id=${user_id}"),);
+      final response= await get(Uri.parse(Api.getprofile+"?user_id=1"),);
 
 
       var data = jsonDecode(response.body);
@@ -31,14 +31,14 @@ class ProfileController extends GetxController{
       print(data);
 
       if(response.statusCode == 200){
-        var result = jsonDecode(response.body);
-        print("============result==========${result}");
+
+        // print("============result==========${result}");
         // openseaModel = OpenseaModel.fromJson(result);
         //
         // ProfileApiModel model = ProfileApiModel.fromJson(data);
-        profileApiModel=ProfileApiModel.fromJson(result);
+        profileApiModel=ProfileApiModel.fromJson(data);
 
-        if(result.status == 'true'){
+        if(data.status == 'true'){
 
           print(prefs.get('user_id'));
           // Get.snackbar('Your otp is',result!.data!.otp.toString());
